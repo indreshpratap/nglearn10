@@ -14,8 +14,8 @@ export class  HeaderComponent {
  title = "Angular Application";
  description = "This is description";
  constructor(){
-     setTimeout(() => {
-            this.title = "Changed the title";
-     }, 5000);
+    //  setTimeout(() => {
+    //         this.title = "Changed the title";
+    //  }, 5000);
  }
 }
