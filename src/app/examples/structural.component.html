@@ -1,0 +1,46 @@
+<h2>Structural Example</h2>
+
+<h4>*ngIf</h4>
+
+<button (click)="toogleInfo()" class="btn btn-primary">Info</button> {{isInfo}}
+<button (click)="toogleWarning()" class="btn btn-secondary">Warning</button> {{isWarning}}
+<button (click)="toogleDanger()" class="btn btn-danger">Danger</button> {{isDanger}}
+<p *ngIf="isInfo" class="alert alert-info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus esse exercitationem tempore? Sapiente iure voluptatibus velit doloribus ratione numquam quaerat expedita ut dicta minus. Accusamus quasi non modi commodi dolorum?</p>
+<p *ngIf="isWarning" class="alert alert-warning">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus esse exercitationem tempore? Sapiente iure voluptatibus velit doloribus ratione numquam quaerat expedita ut dicta minus. Accusamus quasi non modi commodi dolorum?</p>
+<p *ngIf="isDanger" class="alert alert-danger">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus esse exercitationem tempore? Sapiente iure voluptatibus velit doloribus ratione numquam quaerat expedita ut dicta minus. Accusamus quasi non modi commodi dolorum?</p>
+
+<button (click)="clear()">Clear Message</button>
+<button (click)="addMessage()">Add Message</button>
+<button (click)="toogleError(1)">Toggle Required</button>
+<button (click)="toogleError(2)">Toggle Minlength</button>
+
+
+<div *ngIf="message !== null" class="alert alert-danger"> {{ message }}</div>
+<div *ngIf="message === null" class="alert alert-info"> All are Ok :)</div>
+
+<div *ngIf="errors" class="alert alert-danger">
+    <div *ngIf="errors.required">Field required</div>
+    <div *ngIf="errors.minlength">Minimum length is 10</div>
+</div>
+
+{{ errors | json }}
+
+
+<h4>*ngFor</h4>
+
+<b>Available Colors</b>
+<ul>
+    <li *ngFor="let color of colors"> {{ color }} </li>
+</ul>
+
+<div *ngFor="let c of colors"> {{ c }} </div>
+
+<table>
+    <tbody>
+        <tr *ngFor="let c of yourarray">
+            <td>{{ c.name }}</td>
+            <td>{{ c.address }}</td>
+            <td>{{ c.mobile }}</td>
+        </tr>
+    </tbody>
+</table>

@@ -8,24 +8,37 @@ export class BindingsComponent {
 
     bucketId = "bucket001";
     googleLink = "http://google.com";
-    image="https://via.placeholder.com/350x150";
+    image = "https://via.placeholder.com/350x150";
     linkDesc = "Google";
 
-    constructor(){
+    constructor() {
         setTimeout(() => {
             this.googleLink = "http://yahoo.com";
             this.linkDesc = "Yahoo";
-           // this.bucketId="bucket110";
+            // this.bucketId="bucket110";
         }, 4000);
     }
 
-    sayHi(){
+    sayHi() {
         alert("Hi there");
     }
 
-    changeId(){
+    changeId() {
         console.log("Mouse enter changing id");
         this.bucketId = "bucket200";
     }
 
+    // Here ev  = $event passing from template
+    sayHello(ev) {
+        if (ev.shiftKey) {
+            console.log('Hello there');
+            console.log(ev);
+        }
+
+    }
+
+    proccessKey(ev, abc) {
+        console.log(abc);
+        console.log(ev);
+    }
 }
