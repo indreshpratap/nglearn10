@@ -35,12 +35,50 @@
 
 <div *ngFor="let c of colors"> {{ c }} </div>
 
+<button (click)="addRow()">Add New Row</button>
+
+Total Records {{yourarray.length}}
 <table>
     <tbody>
-        <tr *ngFor="let c of yourarray">
-            <td>{{ c.name }}</td>
+        <!-- ngFor has special properties
+        index : number,
+        first: boolean 
+        last: boolean
+        odd: boolean
+        even: boolean 
+    even and odd works on index
+    -->
+        <tr *ngFor="let c of yourarray;let idx=index;let frst = first;let last = last;let even = even;let odd = odd;" [class.first-row]="frst" [class.last-row]="last" [class.even-row]="even" [class.odd-row]="odd">
+            <td>{{idx+1}} </td>
+            <td> {{ c.name }}</td>
             <td>{{ c.address }}</td>
             <td>{{ c.mobile }}</td>
+            <td>
+                Index:{{idx}} First: {{frst}} Last: {{last}} Even: {{even}} Odd: {{odd}}
+            </td>
+            <td>
+                <button (click)="removeRow(idx)">X</button>
+            </td>
         </tr>
     </tbody>
 </table>
+
+<h4>*ngSwitchCase</h4>
+<button (click)="changeType(1)">First</button>
+<button (click)="changeType(2)">Second</button>
+<button (click)="changeType(0)">Clear</button>
+<div [ngSwitch]="type">
+    <div *ngSwitchCase="1">This is first type
+        <ul>
+            <li *ngFor="let color of colors"> {{ color }} </li>
+        </ul>
+    </div>
+    <div *ngSwitchCase="2">This is Second type</div>
+    <div *ngSwitchDefault>No type selected</div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>

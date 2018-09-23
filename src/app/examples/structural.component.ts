@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { create } from 'domain';
+
 
 @Component({
     selector: 'app-structural',
@@ -18,6 +18,8 @@ export class StructuralComponent {
     colors = [];
 
     yourarray = [];
+
+    type=0;
 
     constructor(){
         this.colors = ['White','Green','Blue'];
@@ -62,5 +64,17 @@ export class StructuralComponent {
         if (this.errors === null) {
             this.errors = {};
         }
+    }
+
+    removeRow(index){
+        this.yourarray.splice(index,1);
+    }
+
+    addRow(){
+        this.yourarray.push({name:"user "+this.yourarray.length,address:"Gurgoan",mobile:"7777"});
+    }
+
+    changeType(currentType) {
+        this.type = currentType;
     }
 }

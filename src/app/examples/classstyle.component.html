@@ -1,0 +1,43 @@
+<h4>ngClass and ngStyle</h4>
+
+<!-- using as string value -->
+<div class="alert" [ngClass]="state"> This is alert box</div>
+
+<!-- using as array value -->
+
+<button (click)="addsettingclass('red')">Red</button>
+<button (click)="addsettingclass('bold')">Bold</button>
+<button (click)="addsettingclass('big')">Bigger</button>
+<button (click)="settingsClasses=[]">Clear All</button>
+
+<div class="card" [ngClass]="settingsClasses">
+    this is example of ngclass with array value
+</div>
+<br>
+<br>
+<br>
+<!-- using object as conditional classes -->
+<button (click)="conditionClasses.red= !conditionClasses.red">Red {{conditionClasses.red}}</button>
+<button (click)="conditionClasses.bold= !conditionClasses.bold">Bold {{conditionClasses.bold}}</button>
+<button (click)="conditionClasses.big= !conditionClasses.big">Big {{conditionClasses.big}}</button>
+
+<div class="card" [ngClass]="conditionClasses">
+    this is example of ngclass with conditional object value
+</div>
+
+
+<h4>ngStyle</h4>
+
+<!-- two way binding [(ngModel)] for info only will learn about it in forms -->
+<div>
+    Style Property: <input type="text" placeholder="Style property" [(ngModel)]="styleProperty">
+    Style Value: <input type="text" placeholder="Style value" [(ngModel)]="styleValue">
+    <button (click)="addStyle()">Add style</button> {{ styleProperty }} {{ styleValue }}
+</div>
+<br>
+<div [ngStyle]="styles">this is example of ngStyle
+<br>
+   
+        {{styles | json}}
+    
+</div>

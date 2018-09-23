@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+table {
+    width :90%;
+    border-collapse: collapse;
+
+}
+
+td {
+    padding: 3px;
+    border:1px solid lightgray;
+}
+
+.first-row {
+    color: darkgreen;
+    font-weight: bold;
+}
+
+.last-row {
+    color:tomato;
+    font-weight: bold;
+}
+
+.odd-row {
+    background: #f9f9f9;
+}
+
+
+.red {color:red}
+.bold {font-weight: bold}
+.big {font-size: 20px}
