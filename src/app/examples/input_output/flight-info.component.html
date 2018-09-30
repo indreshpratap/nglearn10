@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-body">
+        {{msg}}
+        <div *ngIf="isOffer">30% Off </div>
+        <div class="row">
+            <div class="col-3">
+                <app-flight-logo [logo]="flight.logo" [name]="flight.name" [flightNumber]="flight.flight_no"></app-flight-logo>
+            </div>
+            <div class="col-3">
+                {{flight.from}}
+                <div>{{flight.from_date}}</div>
+            </div>
+            <div class="col-3">
+                {{flight.to}}
+                <div>{{flight.to_date}}</div>
+            </div>
+            <div class="col-3">
+                <button (click)="doAction()" [ngClass]="actionClass" class="btn">{{actionLabel}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="abc"></div>

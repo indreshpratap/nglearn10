@@ -7,6 +7,9 @@ import { HeaderComponent } from './header.component';
 import { BindingsComponent } from './examples/bindings.component';
 import { StructuralComponent } from './examples/structural.component';
 import { ClassStyleComponent } from './examples/classstyle.component';
+import { FlightListingComponent } from './examples/input_output/flight-listing.component';
+import { FlightInfoComponent } from './examples/input_output/flight-info.component';
+import { FlightLogoComponent } from './examples/input_output/flight-logo.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { ClassStyleComponent } from './examples/classstyle.component';
     HeaderComponent,
     BindingsComponent,
     StructuralComponent,
-    ClassStyleComponent
+    ClassStyleComponent,
+    FlightListingComponent,
+    FlightInfoComponent,
+    FlightLogoComponent
   ],
   imports: [
     BrowserModule,

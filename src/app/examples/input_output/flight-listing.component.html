@@ -1,0 +1,9 @@
+<h2>Flight Listing</h2>
+<div *ngFor="let flt of flights;let first=first">
+    <app-flight-info (action)="addToFav($event)" [offer]="first" [flight]="flt" actionClass="btn-outline-primary" actionLabel="Add to List"></app-flight-info>
+</div>
+
+<h2>Fav Flight Listing</h2>
+<div *ngFor="let flt of favFlights;let first=first">
+    <app-flight-info (action)="removeFromFav($event)" [offer]="first" [flight]="flt" actionClass="btn-outline-danger" actionLabel="Remove"></app-flight-info>
+</div>
