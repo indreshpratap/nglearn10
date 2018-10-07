@@ -1,0 +1,31 @@
+<h2>Template Variables (#)</h2>
+
+<div #mydiv>Abc </div>
+{{ mydiv.innerHTML }}
+
+<input #filter> {{ filter }}
+
+<button (click)="explore(filter)">Input</button>
+<button (click)="exploreDiv(mydiv)">Div</button>
+
+<!-- <app-pipe-example #pipecomponent></app-pipe-example> -->
+
+<!-- {{ pipecomponent.max }} -->
+
+<!-- <button (click)="exploreComp(pipecomponent)">Pipe Comp</button> -->
+
+
+<div highlight>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magnam atque omnis tempore mollitia perferendis reprehenderit nisi animi natus facilis vel repellendus quidem iure excepturi deserunt porro nostrum! Dignissimos, odit.
+</div>
+<p highlight>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magnam atque omnis tempore mollitia perferendis reprehenderit nisi animi natus facilis vel repellendus quidem iure excepturi deserunt porro nostrum! Dignissimos, odit.
+</p>
+
+<footer [highlight]="highlightColor">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magnam atque omnis tempore mollitia perferendis reprehenderit nisi animi natus facilis vel repellendus quidem iure excepturi deserunt porro nostrum! Dignissimos, odit.
+</footer>
+
+<div highlight="pink">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sed consequatur hic nisi quas quis dolorum fugiat delectus, similique accusamus in cupiditate voluptas dignissimos esse harum tempore rerum. Dolor, animi? thisi s pink color
+</div>

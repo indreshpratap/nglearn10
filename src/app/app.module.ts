@@ -10,6 +10,11 @@ import { ClassStyleComponent } from './examples/classstyle.component';
 import { FlightListingComponent } from './examples/input_output/flight-listing.component';
 import { FlightInfoComponent } from './examples/input_output/flight-info.component';
 import { FlightLogoComponent } from './examples/input_output/flight-logo.component';
+import { PipeExampleComponent } from './examples/pipe.component';
+import { TrimPipe } from './pipes/trim.pipe';
+import { YesNoPipe } from './pipes/yesno.pipe';
+import { TemplateVarComponent } from './examples/templatevar.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,12 @@ import { FlightLogoComponent } from './examples/input_output/flight-logo.compone
     ClassStyleComponent,
     FlightListingComponent,
     FlightInfoComponent,
-    FlightLogoComponent
+    FlightLogoComponent,
+    PipeExampleComponent,
+    TemplateVarComponent,
+    TrimPipe,
+    YesNoPipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

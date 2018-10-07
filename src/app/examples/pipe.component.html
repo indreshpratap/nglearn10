@@ -1,0 +1,28 @@
+<h2>Pipe example</h2>
+{{ title | uppercase | trim }}
+<div>
+    {{ 'Hi there' | trim }}
+</div>
+
+
+<div>
+    {{ 'Hi there this is example of pipe with parameters' | trim:15 }}
+</div>
+
+<div>
+        {{ 'Passing parameters from a property' | trim:max }}
+    </div>
+<div>
+        {{ 'Passing multiple parameters from a property' | trim:max:'!!!' }}
+    </div>
+<div>
+        {{ 'Passing multiple parameters from a property' | trim:max:'' }}
+    </div>
+    
+<div>
+    {{true| yesno | uppercase }}
+</div>
+
+<div>
+    {{false| yesno | lowercase }}
+</div>
