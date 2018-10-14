@@ -1,0 +1,5 @@
+<h2>Special Offer</h2>
+<div *ngFor="let flt of flights;let first=first">
+    <app-flight-info (action)="addToFav($event)" [offer]="first" [flight]="flt" actionClass="btn-outline-primary" actionLabel="Add to List"></app-flight-info>
+</div>
+

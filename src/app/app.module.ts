@@ -15,6 +15,8 @@ import { TrimPipe } from './pipes/trim.pipe';
 import { YesNoPipe } from './pipes/yesno.pipe';
 import { TemplateVarComponent } from './examples/templatevar.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { SpecialOfferListingComponent } from './examples/input_output/special-offer-listing.component';
+import { FlightService } from './services/flight.service';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { HighlightDirective } from './directives/highlight.directive';
     StructuralComponent,
     ClassStyleComponent,
     FlightListingComponent,
+    SpecialOfferListingComponent,
     FlightInfoComponent,
     FlightLogoComponent,
     PipeExampleComponent,
@@ -36,7 +39,7 @@ import { HighlightDirective } from './directives/highlight.directive';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [FlightService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

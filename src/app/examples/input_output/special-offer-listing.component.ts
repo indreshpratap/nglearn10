@@ -1,22 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FlightService } from '../../services/flight.service';
-import { Title } from '@angular/platform-browser';
 
 @Component({
-    selector: 'app-flight-listing',
-    templateUrl: './flight-listing.component.html',
+    selector: 'app-special-offer-listing',
+    templateUrl: './special-offer-listing.component.html',
     // styleUrls: ['./flight-listing.component.scss']
 })
-export class FlightListingComponent {
+export class SpecialOfferListingComponent {
     flights;
     favFlights = [];
 
-    /**
-     * Dependency Injection, here FlightService object will be provided by angular
-     */
-    constructor(private flgService:FlightService,private title:Title) {
-        this.flights =flgService.getFlightList();
-        this.title.setTitle('Flight listing page');
+    constructor(flightService:FlightService ) {
+        this.flights = flightService.getFlightList();
     }
 
     addToFav(data) {
@@ -29,8 +24,6 @@ export class FlightListingComponent {
         } else {
             alert('Already in your fav list');
         }
-        this.flgService.getFlightList()
-        
     }
 
 
@@ -46,19 +39,6 @@ export class FlightListingComponent {
             let indx = this.getFavFlightIndex(data);
             this.favFlights.splice(indx, 1);
         }
-    }
-
-    pushNewItem(){
-        this.flights.push( {
-            id: 3,
-            logo: "assets/flights/2.png",
-            name: "Indigo",
-            flight_no: "IND-54443",
-            from: 'Sri lanka ',
-            to: 'London',
-            from_date: '23rd April 2018 05:20',
-            to_date: '23rd April 2018 07:20'
-        });
     }
 
 
