@@ -4,40 +4,22 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header.component';
-import { BindingsComponent } from './examples/bindings.component';
-import { StructuralComponent } from './examples/structural.component';
-import { ClassStyleComponent } from './examples/classstyle.component';
-import { FlightListingComponent } from './examples/input_output/flight-listing.component';
-import { FlightInfoComponent } from './examples/input_output/flight-info.component';
-import { FlightLogoComponent } from './examples/input_output/flight-logo.component';
-import { PipeExampleComponent } from './examples/pipe.component';
-import { TrimPipe } from './pipes/trim.pipe';
-import { YesNoPipe } from './pipes/yesno.pipe';
-import { TemplateVarComponent } from './examples/templatevar.component';
-import { HighlightDirective } from './directives/highlight.directive';
-import { SpecialOfferListingComponent } from './examples/input_output/special-offer-listing.component';
+
+
+
+
 import { FlightService } from './services/flight.service';
+import { ExamplesModule } from 'src/app-modules/examples/examples.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    BindingsComponent,
-    StructuralComponent,
-    ClassStyleComponent,
-    FlightListingComponent,
-    SpecialOfferListingComponent,
-    FlightInfoComponent,
-    FlightLogoComponent,
-    PipeExampleComponent,
-    TemplateVarComponent,
-    TrimPipe,
-    YesNoPipe,
-    HighlightDirective
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ExamplesModule
   ],
   providers: [FlightService],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FlightService } from '../../services/flight.service';
+
 import { Title } from '@angular/platform-browser';
+import { FlightService } from 'src/app/services/flight.service';
 
 @Component({
     selector: 'app-flight-listing',
