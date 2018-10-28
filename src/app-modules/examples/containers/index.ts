@@ -7,8 +7,9 @@ import { FlightLogoComponent } from './input_output/flight-logo.component';
 import { PipeExampleComponent } from './pipe.component';
 import { TemplateVarComponent } from './templatevar.component';
 import { SpecialOfferListingComponent } from './input_output/special-offer-listing.component';
+import { ExampleComponent } from './example/example.component';
 
-export const exampleComponents = [
+export const exampleContainers = [
     BindingsComponent,
     StructuralComponent,
     ClassStyleComponent,
@@ -18,8 +19,18 @@ export const exampleComponents = [
     PipeExampleComponent,
     TemplateVarComponent,
     SpecialOfferListingComponent,
+    ExampleComponent
 
 ];
 
 //re exporting
 export * from './input_output/special-offer-listing.component';
+export * from './bindings.component';
+export * from './structural.component';
+export * from './classstyle.component';
+export * from './input_output/flight-listing.component';
+export * from './input_output/flight-info.component';
+export * from './input_output/flight-logo.component';
+export * from './pipe.component';
+export * from './templatevar.component';
+export * from './example/example.component';
