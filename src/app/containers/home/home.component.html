@@ -1,16 +1,37 @@
-
 <!-- <app-bindings></app-bindings> -->
 <!-- <app-structural></app-structural> -->
 <!-- <app-classstyle></app-classstyle> -->
 
-<div class="row">
-  <div class="col-6">
-      <app-flight-listing></app-flight-listing>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <div class="card">
+                <div class="card-body">
+                    <b>Student</b>
+                    <ul>
+                        <li><a routerLink="/home/student/registration"> Registration</a></li>
+                        <li><a routerLink="/home/student/list"> Listing</a></li>
+                    </ul>
+                    <b>Settings</b>
+                    <ul>
+                        <li><a routerLink="/home/settings">Dashboard</a></li>
+                        <li><a routerLink="/home/settings/session"> Session</a></li>
+                        <li><a routerLink="/home/settings/classes"> Classes</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-10">
+            <div class="card">
+                <div class="card-body">
+                    <router-outlet></router-outlet>
 
-  </div>
-  <div class="col-6">
-      <app-special-offer-listing></app-special-offer-listing>
-  </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
 <!-- <app-pipe-example></app-pipe-example> -->
 <!-- <app-template-var></app-template-var> -->
