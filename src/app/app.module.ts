@@ -14,7 +14,7 @@ import { appRoutes } from './app.routing';
   imports: [
     BrowserModule,
     FormsModule,
-    ExamplesModule,
+   // ExamplesModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [FlightService],

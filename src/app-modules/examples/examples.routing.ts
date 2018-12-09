@@ -4,7 +4,7 @@ import { BindingsComponent, ClassStyleComponent, ExampleComponent } from "./cont
 
 export const exampleRoutes: Routes = [
     {
-        path: "example", component: ExampleComponent,
+        path: "", component: ExampleComponent,
         children: [
             { path: "binding", component: BindingsComponent },
             { path: "class-style", component: ClassStyleComponent }

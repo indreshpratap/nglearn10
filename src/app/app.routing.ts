@@ -14,6 +14,10 @@ export const appRoutes: Routes = [
             {
                 path: 'settings', 
                 loadChildren: '../app-modules/settings/settings.module#SettingsModule'
+            },
+            {
+                path:'example',
+                loadChildren:'../app-modules/examples/examples.module#ExamplesModule'
             }
         ]
     },
