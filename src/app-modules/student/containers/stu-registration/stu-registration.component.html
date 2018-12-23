@@ -1,51 +1,15 @@
 <form [formGroup]="regForm">
-
-  <table>
-    <tbody>
-      <tr>
-        <td>First Name</td>
-        <td>
-          <input type="text" formControlName="firstname">
-          <div *ngIf="regForm.get('firstname').errors">
-           
-            <span *ngIf="regForm.get('firstname').errors['required']">
-              First Name Required!
-            </span>
-            <span *ngIf="regForm.get('firstname').errors['maxLength']">
-              Max length is {{regForm.get('firstname').errors['maxLength'].requiredLength}}
-            </span>
-            <span *ngIf="regForm.get('firstname').errors['minlength']">
-              Min length is {{regForm.get('firstname').errors['minlength'].requiredLength}}
-            </span> 
-          </div>
-        </td>
-        <td>Middle Name</td>
-        <td>
-          <input type="text" formControlName="middlename">
-        </td>
-      </tr>
-      <tr>
-        <td>Last Name</td>
-        <td>
-          <input type="text" formControlName="lastname">
-        </td>
-        <td>Gender</td>
-        <td>
-          <input type="radio" formControlName="gender" value="Boy"> Boy
-          <input type="radio" formControlName="gender" value="Girl"> Girl
-        </td>
-      </tr>
-      <tr *ngIf="regForm.get('bloodGroup')">
-          <td>Blood Group</td>
-          <td>
-          <select formControlName="bloodGroup">
-            <option [ngValue]="null">Select</option>
-            <option *ngFor="let bg of bloodGroupOpts" [ngValue]="bg">{{bg.label}}</option>
-          </select>
-          </td>
-          </tr>
-    </tbody>
-  </table>
+  <p-tabView>
+    <p-tabPanel header="General">
+      <stu-reg-general [regForm]="regForm"></stu-reg-general>
+    </p-tabPanel>
+    <p-tabPanel header="Previous School">
+      <stu-reg-prev-school [regForm]="regForm" [previousSchoolArray]="previousSchoolArray"></stu-reg-prev-school>
+    </p-tabPanel>
+    <p-tabPanel header="Header 3">
+        Content 3
+    </p-tabPanel>
+</p-tabView>
 
   <button type="submit" class="btn btn-primary" [disabled]="regForm.invalid" (click)="save()">Save</button>
 <button class="btn btn-sm" (click)="addBloodGroupCtrl()">Add Blood Group</button>
@@ -58,3 +22,7 @@
 <button class="btn btn-sm" (click)="patchTheForm()">Patch The Form</button>
 
 </form>
+
+<pre>
+  {{regForm.value | json}}
+</pre>

@@ -1,0 +1,47 @@
+<table [formGroup]="regForm">
+  <tbody>
+    <tr>
+      <td>First Name</td>
+      <td>
+        <input type="text" formControlName="firstname">
+        <div *ngIf="regForm.get('firstname').errors">
+          <span *ngIf="regForm.get('firstname').errors['required']">
+            First Name Required!
+          </span>
+          <span *ngIf="regForm.get('firstname').errors['maxLength']">
+            Max length is {{regForm.get('firstname').errors['maxLength'].requiredLength}}
+          </span>
+          <span *ngIf="regForm.get('firstname').errors['minlength']">
+            Min length is {{regForm.get('firstname').errors['minlength'].requiredLength}}
+          </span> 
+        </div>
+      </td>
+      <td>Middle Name</td>
+      <td>
+        <input type="text" formControlName="middlename">
+      </td>
+    </tr>
+    <tr>
+      <td>Last Name</td>
+      <td>
+        <input type="text" formControlName="lastname">
+      </td>
+      <td>Gender</td>
+      <td>
+          <p-radioButton name="gender" label=" Boy" value="Boy" formControlName="gender"></p-radioButton>
+          <p-radioButton name="gender" label=" Girl" value="Girl" formControlName="gender"></p-radioButton>
+        <!-- <input type="radio" formControlName="gender" value="Boy"> Boy
+        <input type="radio" formControlName="gender" value="Girl"> Girl -->
+      </td>
+    </tr>
+    <tr *ngIf="regForm.get('bloodGroup')">
+        <td>Blood Group</td>
+        <td>
+        <select formControlName="bloodGroup">
+          <option [ngValue]="null">Select</option>
+          <option *ngFor="let bg of bloodGroupOpts" [ngValue]="bg">{{bg.label}}</option>
+        </select>
+        </td>
+        </tr>
+  </tbody>
+</table>

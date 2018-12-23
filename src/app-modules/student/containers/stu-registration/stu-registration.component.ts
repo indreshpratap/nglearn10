@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'stu-registration',
@@ -9,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class StuRegistrationComponent implements OnInit {
 
   regForm: FormGroup;
-  bloodGroupOpts = [{ label: 'O+', id: 1 }, { label: 'B+', id: 2 }, { label: 'AB', id: 3 }, { label: 'AB-', id: 4 }];
+  previousSchoolArray: FormArray;
 
   constructor() { }
 
@@ -25,11 +25,13 @@ export class StuRegistrationComponent implements OnInit {
   }
 
   prepareForm() {
+    this.previousSchoolArray = new FormArray([]);
     this.regForm = new FormGroup({
       firstname: new FormControl(null, [Validators.required, Validators.minLength(2), Validators.maxLength(20)]),
       middlename: new FormControl(),
       lastname: new FormControl(),
-      gender: new FormControl('Boy', [Validators.required])
+      gender: new FormControl('Boy', [Validators.required]),
+      previousSchool: this.previousSchoolArray
     });
   }
 

@@ -1,0 +1,24 @@
+<table [formGroup]="regForm">
+  <thead>
+    <tr>
+      <th>School Name</th>
+      <th>Session</th>
+      <th>Class</th>
+      <th>#</th>
+    </tr>
+  </thead>
+  <tbody formArrayName="previousSchool">
+    <tr *ngFor="let prev of previousSchoolArray.controls;let index= index;" [formGroup]="prev">
+      <td><input formControlName="schoolName"></td>
+      <td><input formControlName="schoolSession"></td>
+      <td><input formControlName="schoolClass"></td>
+      <td>
+        <button (click)="remove(index)">x</button></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <button (click)="add()">Add</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
