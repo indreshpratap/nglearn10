@@ -4,8 +4,9 @@ import { studentContainers, studentRoutes } from './containers';
 import { RouterModule } from '@angular/router';
 import { studentComponents } from './components';
 
+
 @NgModule({
-    declarations: [...studentContainers,...studentComponents],
+    declarations: [...studentContainers,...studentComponents,],
     imports: [
         UiKitModule,
         RouterModule.forChild(studentRoutes)

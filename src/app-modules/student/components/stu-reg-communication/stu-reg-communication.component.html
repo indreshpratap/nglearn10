@@ -1,0 +1,81 @@
+<table [formGroup]="regForm">
+  <tbody formGroupName="communications">
+    <ng-container formGroupName="residential">
+      <tr>
+        <td colspan="4">
+          <b>Residential Address</b>
+        </td>
+      </tr>
+      <tr>
+        <td>Address Line 1</td>
+        <td>
+          <input type="text" formControlName="addrline1">
+
+        </td>
+        <td>Address Line2</td>
+        <td>
+          <input type="text" formControlName="addrline2">
+        </td>
+      </tr>
+      <tr>
+        <td>City</td>
+        <td>
+          <input type="text" formControlName="city">
+        </td>
+        <td>Pin</td>
+        <td>
+          <input type="number" maxlength="6" formControlName="pin">
+          <div *ngIf="(communications.get('residential').get('pin').touched || communications.get('residential').get('pin').dirty) && communications.get('residential').get('pin').errors">
+            <span *ngIf="communications.get('residential').get('pin').errors['required']">
+              Pin Required!
+            </span>
+            <span *ngIf="communications.get('residential').get('pin').errors['pincode']">
+              Not a valid pincode!
+            </span>
+          </div>
+        </td>
+      </tr>
+    </ng-container>
+    <tr>
+      <td colspan="4">
+        <input type="checkbox" formControlName="isSame" (change)="togglePermanent()"> Is Same
+      </td>
+    </tr>
+    <ng-container *ngIf="communications.get('permanent')" formGroupName="permanent">
+      <tr>
+        <td colspan="4">
+          <b>Permanent Address</b>
+        </td>
+      </tr>
+      <tr>
+        <td>Address Line 1</td>
+        <td>
+          <input type="text" formControlName="addrline1">
+
+        </td>
+        <td>Address Line2</td>
+        <td>
+          <input type="text" formControlName="addrline2">
+        </td>
+      </tr>
+      <tr>
+        <td>City</td>
+        <td>
+          <input type="text" formControlName="city">
+        </td>
+        <td>Pin</td>
+        <td>
+          <input type="number" maxlength="6" formControlName="pin">
+          <div *ngIf="(communications.get('permanent').get('pin').touched || communications.get('permanent').get('pin').dirty ) && communications.get('permanent').get('pin').errors">
+              <span *ngIf="communications.get('permanent').get('pin').errors['required']">
+                Pin Required!
+              </span>
+              <span *ngIf="communications.get('permanent').get('pin').errors['pincode']">
+                Not a valid pincode!
+              </span>
+            </div>
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
