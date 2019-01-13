@@ -12,7 +12,7 @@ export class HighlightDirective {
      * Defining a parameter  in @Directive,@Component, and @Pipe's constructor is called Dependency Injection in angular 
      * @param element 
      */
-    constructor(private element: ElementRef) {
+    constructor(public element: ElementRef) {
         console.log("Highlight directive");
         // this.highlight();
     }

@@ -1,30 +1,45 @@
 <!-- Propperty binding: [] -->
+<page title="Property Binding Changed">
+    <page-toolbar>
+        <button (click)="sayHi()">Hi There</button>
+    </page-toolbar>
+    <page-content>
+        <div #mycontent class="container" id="xyz">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa commodi recusandae tempora aspernatur
+            delectus quia quisquam aliquam laboriosam veritatis cupiditate, esse officiis optio sint, illum omnis natus
+            nostrum et iure.
+        </div>
 
-<h3>Property Binding</h3>
-<div class="container" id="xyz">
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa commodi recusandae tempora aspernatur delectus quia quisquam aliquam laboriosam veritatis cupiditate, esse officiis optio sint, illum omnis natus nostrum et iure.
-</div>
+        <div [id]="bucketId" (mouseenter)="changeId()">
+            This is my bucket
+        </div>
+
+        <a [href]="googleLink">{{ linkDesc }}</a>
+        <img [src]="image">
+
+        <!-- Using interpolation -->
+
+        <a href="{{ googleLink }}">{{linkDesc}}</a>
 
 
 
-<div [id]="bucketId" (mouseenter)="changeId()">
-This is my bucket
-</div>
+        <h3>Event Binding</h3>
 
-<a [href]="googleLink">{{ linkDesc }}</a>
-<img [src]="image">
+        <button (click)="sayHi()">Say Hi</button>
 
-<!-- Using interpolation -->
+        <button (dblclick)="sayHello($event)" (click)="sayHello($event)">Say Hello</button>
 
-<a href="{{ googleLink }}">{{linkDesc}}</a>
+        <input type="text" (keydown)="proccessKey($event,'done')">
+    </page-content>
 
+</page>
 
-
-<h3>Event Binding</h3>
-
-<button (click)="sayHi()">Say Hi</button>
-
-<button (dblclick)="sayHello($event)" (click)="sayHello($event)">Say Hello</button>
-
-<input type="text" (keydown)="proccessKey($event,'done')">
-
+<page title="test">
+    
+    <page-content>
+        <div highlight="green">green</div>
+        <div highlight="yellow">yellow</div>
+        <div highlight="green">green</div>
+        <div highlight="green">green</div>
+    </page-content>
+</page>

@@ -1,0 +1,10 @@
+.page-heading {
+    border:1px solid;
+    padding:5px;
+}
+
+.page-content {
+    border:1px solid;
+    padding:5px;
+    background:lightblue;
+}
