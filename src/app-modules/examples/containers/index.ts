@@ -8,6 +8,7 @@ import { PipeExampleComponent } from './pipe.component';
 import { TemplateVarComponent } from './templatevar.component';
 import { SpecialOfferListingComponent } from './input_output/special-offer-listing.component';
 import { ExampleComponent } from './example/example.component';
+import { ObservablesComponent } from './observables/observables.component';
 
 export const exampleContainers = [
     BindingsComponent,
@@ -19,7 +20,8 @@ export const exampleContainers = [
     PipeExampleComponent,
     TemplateVarComponent,
     SpecialOfferListingComponent,
-    ExampleComponent
+    ExampleComponent,
+    ObservablesComponent
 
 ];
 
@@ -34,3 +36,4 @@ export * from './input_output/flight-logo.component';
 export * from './pipe.component';
 export * from './templatevar.component';
 export * from './example/example.component';
+export * from './observables/observables.component';

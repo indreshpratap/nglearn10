@@ -8,7 +8,7 @@ import { appComponents } from './components';
 import { AppComponent, appContainers } from './containers';
 import { FlightService } from './services/flight.service';
 import { appRoutes } from './app.routing';
-
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [...appComponents,...appContainers],
@@ -16,6 +16,7 @@ import { appRoutes } from './app.routing';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
    // ExamplesModule,
     RouterModule.forRoot(appRoutes)
   ],

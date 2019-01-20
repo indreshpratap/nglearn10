@@ -5,7 +5,7 @@
       <form #loginfrm="ngForm">
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
-          <input type="email" name="name" minlength="10" required class="form-control" [(ngModel)]="username" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <input type="email" name="name"  required class="form-control" [(ngModel)]="username" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
           <small *ngIf="loginfrm.controls['name']?.errors?.required" id="emailHelp" class="form-text text-muted">Username is required.</small>
           <small *ngIf="loginfrm.controls['name']?.errors?.minlength" id="emailHelp" class="form-text text-muted">Minimum 10 chars</small>
         
@@ -21,6 +21,8 @@
       Invalid:   {{loginfrm.invalid}}
       Valid:   {{loginfrm.valid}}
       </form>
+
+      <button (click)="fetch()">Fetch</button>
     </div>
   </div>
 </div>
