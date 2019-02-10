@@ -1,3 +1,30 @@
-<p>
-  stu-listing works!
-</p>
+<p-table [value]="list" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="caption">
+       Student List
+    </ng-template>
+    <ng-template pTemplate="header" >
+        <tr>
+            <th>No.</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>email</th>
+            <th>username</th>
+            <th>active</th>
+            <th>#</th>
+          </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-student let-index="rowIndex">
+        <tr>
+      <td>{{index+1}}</td>
+      <td>{{student._id}}</td>
+      <td>{{student.name}}</td>
+      <td>{{student.email}}</td>
+      <td>{{student.username}}</td>
+      <td>{{student.active}}</td>   
+      <td><button>edit</button></td>   
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+        There are {{list?.length}} students
+    </ng-template>
+</p-table>

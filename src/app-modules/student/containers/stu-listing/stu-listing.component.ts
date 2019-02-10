@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ApiClient } from 'src/app/services/api-client.service';
 
 @Component({
   selector: 'stu-listing',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StuListingComponent implements OnInit {
 
-  constructor() { }
+  list;
+  constructor(private api: ApiClient) { }
 
   ngOnInit() {
+    this.fetchStudents();
+  }
+
+  fetchStudents() {
+    this.api.get('student/fetch').subscribe((res: any) => {
+      this.list = res.data;
+    });
   }
 
 }
