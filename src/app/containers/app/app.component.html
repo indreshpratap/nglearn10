@@ -3,9 +3,10 @@
 
     <a routerLink="/login">login</a>
     <a routerLink="/register">register</a>
-    <a routerLink="/home">home</a>
-    <a routerLink="/home/example">Examples</a>
-  
+
+    <a *ngIf="loggedIn" routerLink="/home">home</a>
+    <a *ngIf="loggedIn" routerLink="/home/example">Examples</a>
+  <a *ngIf="loggedIn" (click)="logout()">Logout</a>
     <hr>
     <router-outlet></router-outlet>
 </div>
