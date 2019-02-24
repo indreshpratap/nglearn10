@@ -62,4 +62,8 @@ export class StuRegistrationComponent implements OnInit {
     this.regForm.addControl('bloodGroup', new FormControl(null));
   }
 
+  isChanged(){
+    return this.regForm.dirty;
+  }
+
 }
